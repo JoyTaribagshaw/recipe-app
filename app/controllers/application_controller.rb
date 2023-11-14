@@ -6,4 +6,3 @@ class ApplicationController < ActionController::Base
     User.new(name: 'Test User')
   end
 end
-
