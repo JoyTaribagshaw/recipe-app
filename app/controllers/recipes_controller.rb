@@ -10,9 +10,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    unless @recipe.public || @recipe.author == current_user
-      redirect_to recipes_path, alert: 'You do not have access to that recipe.'
-    end
+    redirect_to recipes_path, alert: 'You do not have access to that recipe.' unless @recipe.public || @recipe.author == current_user
 
     @recipe_foods = RecipeFood.where(recipe: @recipe).includes(food: :author)
     @missing_foods = find_missing_foods(@recipe)
