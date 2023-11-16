@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- .single_recipe {
+.single_recipe {
   background-color: aquamarine;
 }
 
