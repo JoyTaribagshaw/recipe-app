@@ -1,2 +1,3 @@
-module RecipeFoodHelper
-end
+module RecipeHelper
+  end
+  
