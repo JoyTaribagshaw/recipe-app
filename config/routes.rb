@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     authenticated :user do
-      root to: 'foods#index', as: :authenticated_root
+      root to: 'recipes#index', as: :authenticated_root
     end
     unauthenticated :user do
       root to: 'recipes#public_recipes', as: :unauthenticated_root
@@ -21,9 +21,9 @@ Rails.application.routes.draw do
     resources :recipe_foods
   end
 
-  resources :foods, only: %i[index new create destroy]
+  # resources :foods, only: %i[index new create destroy]
 
-  resources :shopping_lists, only: [:index]
+  # resources :shopping_lists, only: [:index]
 
   # resources :users, only: [:show]
   # Defines the root path route ("/")
