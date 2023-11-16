@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :views
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -10,20 +9,21 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     authenticated :user do
-      root to: 'recipes#index', as: :authenticated_root
+      root :to => 'foods#index', as: :authenticated_root
     end
     unauthenticated :user do
-      root to: 'recipes#public_recipes', as: :unauthenticated_root
+      root :to => 'recipes#public_recipes', as: :unauthenticated_root
     end
   end
 
-  resources :recipes, only: %i[index new create show update destroy] do
+
+  resources :recipes, only: [:index, :new, :create, :show, :update, :destroy] do
     resources :recipe_foods
   end
 
-  # resources :foods, only: %i[index new create destroy]
+  resources :foods, only: [:index, :new, :create, :destroy]
 
-  # resources :shopping_lists, only: [:index]
+  resources :shopping_lists, only: [:index]
 
   # resources :users, only: [:show]
   # Defines the root path route ("/")
