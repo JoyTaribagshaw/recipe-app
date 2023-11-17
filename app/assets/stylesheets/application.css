@@ -36,3 +36,29 @@ a {
   font-size: 18px;
   font-weight: 600;
 }
+
+.table {
+  caption-side: bottom;
+  border-collapse: collapse;
+  width: 70%;
+  margin: 0 auto;
+}
+
+th, thead, tr {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+  width: 40%;
+}
+
+
+.btn-success {
+  color: #fff;
+  background-color: #198754;
+  border-color: #198754;
+  margin-left: 78%;
+}
+
+.t-data {
+  width: 34%;
+}
