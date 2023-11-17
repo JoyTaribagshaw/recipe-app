@@ -1,12 +1,9 @@
 <div class="container">
   <h1 class="mt-4 mb-4 text-center">My Recipes</h1>
 
-  <p>If the user is signed in, they can see this button:</p>
   <% if can? :create, Recipe %>
     <%= link_to 'Add Recipe', new_recipe_path, class: 'btn btn-success mb-4' %>
   <% end %>
-
-  <p>If the user is NOT signed in, they can't see any buttons</p>
 
   <ul id="recipes_container" class="list-unstyled">
     <% @recipes.each_with_index do |recipe, i| %>
