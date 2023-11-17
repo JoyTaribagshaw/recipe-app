@@ -18,30 +18,35 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
     if @recipe.save
-      flash[:success] = 'recipe created successfully!'
+      flash[:success] = 'Recipe created successfully!'
       redirect_to recipes_url
     else
-      flash.now[:error] = 'Error: recipe could not be created!'
+      flash.now[:error] = 'Error: Recipe could not be created!'
       render :new, locals: { recipe: @recipe }
     end
   end
 
   def destroy
     @recipe = Recipe.find(params[:id])
-    @recipe.destroy!
-    flash[:success] = 'Recipe was deleted successfully!'
+
+    if @recipe.destroy
+      flash[:success] = 'Recipe was deleted successfully!'
+    else
+      flash[:error] = 'Error: Recipe could not be deleted!'
+    end
+
     redirect_to recipes_url
   end
 
   def update
     @recipe = Recipe.find(params[:id])
-    if @recipe.public
-      @recipe.update!(public: false)
-      flash[:notice] = 'Recipe status changed to private'
+
+    if @recipe.update(public: !@recipe.public)
+      flash[:notice] = @recipe.public ? 'Recipe status changed to public' : 'Recipe status changed to private'
     else
-      @recipe.update!(public: true)
-      flash[:notice] = 'Recipe status changed to public'
+      flash[:error] = 'Error: Recipe status could not be changed!'
     end
+
     redirect_to recipe_path
   end
 

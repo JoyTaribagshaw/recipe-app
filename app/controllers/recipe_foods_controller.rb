@@ -1,10 +1,13 @@
 class RecipeFoodsController < ApplicationController
+  before_action :set_recipe_food, only: [:edit, :update, :destroy]
+
   def new
     @recipe_food = RecipeFood.new
   end
 
   def edit
-    @recipe_food = RecipeFood.find(params[:id])
+    # No need to find the recipe_food here; it's handled by the before_action
+    # @recipe_food = RecipeFood.find(params[:id])
   end
 
   def create
@@ -20,24 +23,38 @@ class RecipeFoodsController < ApplicationController
   end
 
   def destroy
-    @recipe_food = RecipeFood.find(params[:id])
-    @recipe_food.destroy!
-    flash[:success] = 'Ingredient was deleted successfully!'
-    redirect_to recipe_path(@recipe_food.recipe_id)
+    if @recipe_food
+      @recipe_food.destroy
+      flash[:success] = 'Ingredient was deleted successfully!'
+    else
+      flash[:error] = 'Error: Ingredient not found!'
+    end
+    redirect_to recipe_path(params[:recipe_id])
   end
 
   def update
-    @recipe_food = RecipeFood.find(params[:id])
-    if @recipe_food.update(recipe_food_params)
-      flash[:notice] = 'Ingredient updated successfully!'
-      redirect_to recipe_path(params[:recipe_id])
+    if @recipe_food
+      if @recipe_food.update(recipe_food_params)
+        flash[:notice] = 'Ingredient updated successfully!'
+        redirect_to recipe_path(params[:recipe_id])
+      else
+        flash.now[:error] = 'Error: ingredient could not be updated!'
+        render :edit, locals: { recipe_food: @recipe_food }
+      end
     else
-      flash.now[:error] = 'Error: ingredient could not be updated!'
-      render :edit, locals: { recipe_food: @recipe_food }
+      flash[:error] = 'Error: Ingredient not found!'
+      redirect_to recipe_path(params[:recipe_id])
     end
   end
 
+  private
+
   def recipe_food_params
     params.require(:recipe_food).permit(:quantity, :food_id)
+  end
+
+  def set_recipe_food
+    @recipe_food = RecipeFood.find_by(id: params[:id])
+    redirect_to recipe_path(params[:recipe_id]) unless @recipe_food
   end
 end

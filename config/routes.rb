@@ -23,8 +23,4 @@ Rails.application.routes.draw do
   resources :foods, only: %i[index new create destroy]
 
   resources :shopping_lists, only: [:index]
-
-  # resources :users, only: [:show]
-  # Defines the root path route ("/")
-  # root "posts#index"
 end
