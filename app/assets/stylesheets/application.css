@@ -9,11 +9,9 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
  */
-.single_recipe {
+
+ .single_recipe {
   background-color: aquamarine;
 }
 
@@ -50,7 +48,6 @@ th, thead, tr {
   border-width: 0;
   width: 40%;
 }
-
 
 .btn-success {
   color: #fff;
@@ -89,8 +86,7 @@ th, thead, tr {
   justify-content: space-between;
 }
 
-
+/* Remove one of the duplicate selectors */
 .card-footer:last-child {
   border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
 }
-
