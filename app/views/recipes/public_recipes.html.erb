@@ -4,7 +4,7 @@
   <div class="card-deck">
     <% @recipes.includes([:user]).includes([:recipe_foods]).each do |recipe| %>
       <div class="card mb-4">
-        <div class="card-body">
+        <div class="card-body bpp">
           <%= link_to "/recipes/#{recipe.id}" do %>
             <h5 class="card-title"><%= recipe.name %> by <%= recipe.user.name %></h5>
          <div class="center">
