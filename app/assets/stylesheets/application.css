@@ -1,0 +1,105 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ */
+
+.single_recipe {
+  background-color: aquamarine;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.nav-list {
+  display: flex;
+  gap: 10px;
+}
+
+a {
+  list-style-type: none;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.table {
+  caption-side: bottom;
+  border-collapse: collapse;
+  width: 70%;
+  margin: 0 auto;
+}
+
+th,
+thead,
+tr {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+  width: 40%;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #198754;
+  border-color: #198754;
+  margin-left: 78%;
+}
+
+.t-data {
+  width: 34%;
+}
+
+.card-body {
+  padding: 1rem 1rem;
+}
+
+.bpp {
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Add an empty line before the rule */
+.card-footer:last-child {
+  border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
+  display: flex;
+}
+
+.card-body > .bcc {
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card-title {
+  margin-bottom: 0.5rem;
+  line-height: 2;
+}
+
+.btn-info {
+  margin-inline-start: 60rem;
+  color: #000;
+  background-color: #0dcaf0;
+  border-color: #0dcaf0;
+}
