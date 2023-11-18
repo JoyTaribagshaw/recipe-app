@@ -64,9 +64,6 @@ tr {
 
 .card-body {
   padding: 1rem 1rem;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
 }
 
 .bpp {
@@ -87,4 +84,10 @@ tr {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+  display: flex;
+  justify-content: flex-end;
 }
