@@ -14,6 +14,7 @@
  .single_recipe {
   background-color: aquamarine;
 }
+
 .navbar {
   display: flex;
   align-items: center;
@@ -75,6 +76,7 @@ tr {
   justify-content: space-between;
 }
 
+/* Add an empty line before the rule */
 .card-footer:last-child {
   border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
   display: flex;
@@ -85,4 +87,9 @@ tr {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+/* Remove one of the duplicate selectors */
+.card-footer:last-child {
+  border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
 }
