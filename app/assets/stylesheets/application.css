@@ -91,3 +91,15 @@ tr {
   display: flex;
   justify-content: flex-end;
 }
+
+.card-title {
+  margin-bottom: 0.5rem;
+  line-height: 2;
+}
+
+.btn-info {
+  margin-inline-start: 60rem;
+  color: #000;
+  background-color: #0dcaf0;
+  border-color: #0dcaf0;
+}

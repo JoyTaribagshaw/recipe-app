@@ -6,7 +6,7 @@
       <div class="card mb-4">
         <div class="card-body bpp">
           <%= link_to "/recipes/#{recipe.id}" do %>
-            <h5 class="card-title"><%= recipe.name %> by <%= recipe.user.name %></h5>
+            <h5 class="card-title"><%= recipe.name %> <br> by : <%= recipe.user.name %></h5>
          <div class="center">
          <% end %>
           <% if can? :destroy, recipe %>
