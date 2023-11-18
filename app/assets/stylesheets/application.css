@@ -88,8 +88,3 @@ tr {
   flex-direction: row;
   justify-content: space-between;
 }
-
-/* Remove one of the duplicate selectors */
-.card-footer:last-child {
-  border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
-}
