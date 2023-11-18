@@ -42,7 +42,9 @@ a {
   margin: 0 auto;
 }
 
-th, thead, tr {
+th,
+thead,
+tr {
   border-color: inherit;
   border-style: solid;
   border-width: 0;
@@ -86,7 +88,6 @@ th, thead, tr {
   justify-content: space-between;
 }
 
-/* Remove one of the duplicate selectors */
 .card-footer:last-child {
   border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
 }
