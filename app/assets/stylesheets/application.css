@@ -62,3 +62,10 @@ th, thead, tr {
 .t-data {
   width: 34%;
 }
+
+.card-body {
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
